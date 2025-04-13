@@ -1,0 +1,37 @@
+'use client';
+
+import { TransitionText } from '@/components/common/transition-text';
+import { BusinessScaleCard } from '@/components/pages/home/business-scale/business-scale-card';
+
+export const ScaleYourBusiness = () => {
+	return (
+		<section className='bg-black'>
+			<div className='container py-32'>
+				<div className='max-w-[37.5rem] pb-24'>
+					<TransitionText bg='black' lines={2}>
+						<h2 className='text-8xl leading-[6.6rem] font-medium -tracking-[0.3125rem] text-white'>
+							Scale your business with
+						</h2>
+					</TransitionText>
+				</div>
+				<div className='flex flex-col gap-y-10'>
+					<BusinessScaleCard
+						description='Handle dynamic data with the built-in content manager. Link data dynamically to any part of your website.'
+						image='https://droip.com/wp-content/uploads/2025/03/CMS1.webp'
+						title='Content Manager'
+					/>
+					<BusinessScaleCard
+						description='Organize and edit all media assets, including SVGs, Lottie, and icons, with the built-in image and shape editor.'
+						image='https://droip.com/wp-content/uploads/2025/03/Media-Manager.webp'
+						title='Media Manager'
+					/>
+					<BusinessScaleCard
+						description="Dynamically update SEO content across pages to optimize your website's search performance."
+						image='https://droip.com/wp-content/uploads/2025/03/dymanic-seo2-1.webp'
+						title='SEO'
+					/>
+				</div>
+			</div>
+		</section>
+	);
+};

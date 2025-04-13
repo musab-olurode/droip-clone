@@ -1,29 +1,32 @@
-import { helloKeys } from '@/lib/api/queryKeys';
-import { getHello } from '@/lib/api/requests/hello';
+import { Header } from '@/components/common/header/header';
+import { AppIntegration } from '@/components/pages/home/app-integration';
+import { ScaleYourBusiness } from '@/components/pages/home/business-scale/scale-your-business';
+import { CookieBanner } from '@/components/pages/home/cookie-banner';
+import { Dependencies } from '@/components/pages/home/dependencies';
+import { DesignAndBuild } from '@/components/pages/home/design-and-build';
+import { Features } from '@/components/pages/home/features';
+import { Footer } from '@/components/pages/home/footer';
+import { GetStartedBanner } from '@/components/pages/home/get-started-banner';
+import { Performance } from '@/components/pages/home/performance';
+import { PixelAccuracyAndBusinessJumpstart } from '@/components/pages/home/pixel-accuracy/pixel-accuracy-and-business-jumpstart';
 
-import HelloWord from '@/components/pages/home/hello-word';
-
-import {
-	dehydrate,
-	HydrationBoundary,
-	QueryClient,
-} from '@tanstack/react-query';
-
-export default async function Home() {
-	const queryClient = new QueryClient();
-
-	await queryClient.prefetchQuery({
-		queryKey: [helloKeys.read],
-		queryFn: getHello,
-	});
-
+export default function Home() {
 	return (
 		<>
-			<main className='flex min-h-screen items-center justify-center'>
-				<HydrationBoundary state={dehydrate(queryClient)}>
-					<HelloWord />
-				</HydrationBoundary>
+			<Header />
+			<main>
+				<Features variant={1} />
+				<Features variant={2} />
+				<ScaleYourBusiness />
+				<PixelAccuracyAndBusinessJumpstart />
+				<Dependencies />
+				<Performance />
+				<AppIntegration />
+				<DesignAndBuild />
+				<GetStartedBanner />
 			</main>
+			<Footer />
+			<CookieBanner />
 		</>
 	);
 }

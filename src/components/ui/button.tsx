@@ -6,12 +6,16 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 const buttonVariants = cva(
-	"focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+	[
+		'focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
+		'inline-flex items-center justify-center gap-2 rounded-[0.75rem] text-sm font-medium whitespace-nowrap transition-[color,background-color,box-shadow,height] outline-none',
+		'cursor-pointer duration-300 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0',
+		"ease-out [&_svg:not([class*='size-'])]:size-4",
+	],
 	{
 		variants: {
 			variant: {
-				default:
-					'bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm',
+				default: 'bg-primary text-primary-foreground hover:bg-primary/90',
 				destructive:
 					'bg-destructive hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-white shadow-xs',
 				outline:
@@ -23,8 +27,8 @@ const buttonVariants = cva(
 			},
 			size: {
 				default: 'h-9 px-4 py-2 has-[>svg]:px-3',
-				sm: 'h-8 rounded-md px-3 has-[>svg]:px-2.5',
-				lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
+				sm: 'h-8 rounded-[0.75rem] px-3 has-[>svg]:px-2.5',
+				lg: 'h-10 rounded-[0.75rem] px-6 has-[>svg]:px-4',
 				icon: 'size-9',
 			},
 		},
