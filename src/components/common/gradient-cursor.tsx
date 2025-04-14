@@ -7,9 +7,11 @@ import { motion } from 'motion/react';
 export const GradientCursor = ({
 	mousePos,
 	variant = 'dark',
+	hide = false,
 }: {
 	mousePos: { x: number; y: number };
 	variant?: 'dark' | 'light';
+	hide?: boolean;
 }) => {
 	return (
 		<>
@@ -17,6 +19,7 @@ export const GradientCursor = ({
 				animate={{
 					x: mousePos.x,
 					y: mousePos.y,
+					opacity: hide ? 0 : 1,
 				}}
 				className={cn(
 					'pointer-events-none absolute inset-0 z-0 flex h-full w-full items-center justify-center',
@@ -33,6 +36,7 @@ export const GradientCursor = ({
 				animate={{
 					x: mousePos.x,
 					y: mousePos.y,
+					opacity: hide ? 0 : 1,
 				}}
 				className='pointer-events-none absolute inset-0 z-[2] flex h-full w-full items-center justify-center mix-blend-overlay'
 				transition={{

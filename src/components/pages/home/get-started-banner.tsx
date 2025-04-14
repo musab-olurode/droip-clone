@@ -1,8 +1,10 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import { cn } from '@/lib/utils';
+
+import { useGradientCursor } from '@/hooks/use-gradient-cursor';
 
 import { GradientCursor } from '@/components/common/gradient-cursor';
 import { Button } from '@/components/ui/button';
@@ -12,17 +14,9 @@ import Link from 'next/link';
 
 export const GetStartedBanner = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
-	const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-	const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-		if (!containerRef.current) return;
-
-		const rect = containerRef.current.getBoundingClientRect();
-		const x = e.clientX - rect.left - rect.width / 2;
-		const y = e.clientY - rect.top - rect.height / 2;
-
-		setMousePos({ x, y });
-	};
+	const { mousePos, handleMouseMove } = useGradientCursor({
+		ref: containerRef,
+	});
 
 	return (
 		<section className='container pt-16 pb-[6.25rem] min-[992px]:pt-0 min-[992px]:pb-[9.0625rem]'>

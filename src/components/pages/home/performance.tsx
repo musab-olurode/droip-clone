@@ -1,9 +1,10 @@
 'use client';
 
 import { useRef } from 'react';
-import { useState } from 'react';
 
 import { cn } from '@/lib/utils';
+
+import { useGradientCursor } from '@/hooks/use-gradient-cursor';
 
 import { GradientCursor } from '@/components/common/gradient-cursor';
 import { TransitionText } from '@/components/common/transition-text';
@@ -12,22 +13,22 @@ import Image from 'next/image';
 
 export const Performance = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
-	const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-	const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-		if (!containerRef.current) return;
-
-		const rect = containerRef.current.getBoundingClientRect();
-		const x = e.clientX - rect.left - rect.width / 2;
-		const y = e.clientY - rect.top - rect.height / 2;
-
-		setMousePos({ x, y });
-	};
+	const {
+		hideCursor,
+		mousePos,
+		handleMouseMove,
+		handleMouseEnter,
+		handleMouseLeave,
+	} = useGradientCursor({
+		ref: containerRef,
+	});
 
 	return (
 		<section
 			ref={containerRef}
 			className='relative isolate mb-[3.75rem] flex overflow-hidden bg-black'
+			onMouseEnter={handleMouseEnter}
+			onMouseLeave={handleMouseLeave}
 			onMouseMove={handleMouseMove}
 		>
 			<div className='container py-16 min-[767px]:py-[4.5rem] min-[992px]:py-32'>
@@ -96,7 +97,7 @@ export const Performance = () => {
 					</article>
 				</div>
 			</div>
-			<GradientCursor mousePos={mousePos} variant='light' />
+			<GradientCursor hide={hideCursor} mousePos={mousePos} variant='light' />
 		</section>
 	);
 };

@@ -78,7 +78,7 @@ export const DesignAndBuild = () => {
 				<article
 					className={cn(
 						'col-span-1 grid w-full grid-cols-1 items-end justify-end gap-y-[2.6875rem] rounded-lg bg-white min-[767px]:col-span-2 min-[767px]:grid-cols-2',
-						'p-6 min-[992px]:col-span-4 min-[992px]:p-8',
+						'p-6 min-[575px]:p-8 min-[992px]:col-span-4',
 					)}
 				>
 					<div className='flex max-w-[22.5rem] flex-col gap-y-6'>
@@ -104,7 +104,7 @@ export const DesignAndBuild = () => {
 						width={620}
 					/>
 				</article>
-				<article className='col-span-1 flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:col-span-2 min-[992px]:p-8'>
+				<article className='col-span-1 flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[575px]:p-8 min-[992px]:col-span-2'>
 					<Image
 						alt='Form builder'
 						className='h-full max-h-[11.375rem] w-full object-contain'
@@ -127,7 +127,7 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='col-span-1 flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:col-span-2 min-[992px]:p-8'>
+				<article className='col-span-1 flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[575px]:p-8 min-[992px]:col-span-2'>
 					<Image
 						alt='CSS preview'
 						className='h-full max-h-[11.375rem] w-full object-contain'
@@ -147,7 +147,7 @@ export const DesignAndBuild = () => {
 						<p>See real-time CSS changes and fine-tune styles as you need.</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[575px]:p-8'>
 					<Image
 						alt='Unlimited breakpoints'
 						className='h-full max-h-[11.375rem] w-full object-contain'
@@ -165,7 +165,7 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[575px]:p-8'>
 					<Image
 						alt='Figma to droip'
 						className='h-full max-h-[11.375rem] w-full object-contain'
@@ -183,7 +183,7 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[575px]:p-8'>
 					<Image
 						alt='Code element'
 						className='h-full max-h-[11.375rem] w-full object-contain'
@@ -201,7 +201,7 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[575px]:p-8'>
 					<Image
 						alt='Pop-up builder'
 						className='h-full max-h-[11.375rem] w-full object-contain'
@@ -219,7 +219,7 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[575px]:p-8'>
 					<Image
 						alt='Autosave'
 						className='h-full max-h-[11.375rem] w-full object-contain'
@@ -236,7 +236,7 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[575px]:p-8'>
 					<Image
 						alt='Global style manager'
 						className='h-full max-h-[11.375rem] w-full object-contain'
@@ -251,7 +251,7 @@ export const DesignAndBuild = () => {
 						<p>Maintain consistent branding with centralized style controls.</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:col-span-2 min-[992px]:p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[575px]:p-8 min-[767px]:col-span-2'>
 					<Image
 						alt='Droip AI'
 						className='h-full max-h-[11.375rem] object-contain'

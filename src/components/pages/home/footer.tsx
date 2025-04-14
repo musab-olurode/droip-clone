@@ -110,7 +110,7 @@ export const Footer = () => {
 					<ThemeumIcon />
 				</div>
 				<Link
-					className='flex min-h-[1.6875rem] items-center gap-x-2 rounded-[0.3125rem] bg-[#9353ff] p-px pl-2 text-[0.8125rem] leading-[1em] font-medium'
+					className='flex min-h-[1.6875rem] items-center gap-x-2 rounded-[0.3125rem] bg-[#9353ff] p-px pl-2 text-[0.8125rem] leading-[1em] font-medium min-[767px]:order-2'
 					href='/'
 				>
 					<DroipDIcon />

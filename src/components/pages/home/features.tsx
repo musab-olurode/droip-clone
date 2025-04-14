@@ -88,8 +88,8 @@ export const Features = ({ variant = 1 }: { variant?: 1 | 2 }) => {
 			<TransitionText lines={width > 575 ? 2 : 3}>
 				<h2
 					className={cn(
-						'pointer-events-auto text-[2.875rem] leading-[1.1em] font-medium max-[575px]:[font-size:clamp(2.875rem,11vw,3.75rem)] min-[992px]:text-8xl min-[992px]:tracking-[0.3125rem]',
-						'-tracking-[0.1875rem]',
+						'pointer-events-auto text-[2.875rem] leading-[1.1em] font-medium max-[575px]:[font-size:clamp(2.875rem,11vw,3.75rem)] min-[992px]:text-8xl',
+						'-tracking-[0.1875rem] min-[992px]:-tracking-[0.3125rem]',
 						variant === 2 && 'max-w-[62.5rem]',
 					)}
 				>

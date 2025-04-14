@@ -35,11 +35,10 @@ export const BusinessScaleCard = ({ title, description, image }: Props) => {
 		<motion.article
 			ref={cardRef}
 			className={cn(
-				'sticky inset-auto flex flex-col justify-between gap-x-10 p-12 pr-0 min-[992px]:top-[10vh] min-[992px]:mb-20 min-[992px]:h-[80vh]',
-				'min-[767px]:flex-row min-[992px]:max-h-[46.25rem] min-[992px]:rounded-[1.75rem]',
+				'sticky inset-auto flex flex-col justify-between gap-x-10 min-[575px]:p-12 min-[575px]:pr-0 min-[992px]:top-[10vh] min-[992px]:mb-20',
+				'min-[767px]:flex-row min-[992px]:h-[80vh] min-[992px]:max-h-[46.25rem] min-[992px]:rounded-[1.75rem]',
 				'h-[70vh] max-h-[50rem] rounded-[0.875rem] min-[575px]:top-[15vh] min-[575px]:mb-0',
-				'min-[575px]:justify-between min-[575px]:gap-y-10 min-[575px]:pb-8',
-				'top-[15vh] px-[1.125rem] py-8',
+				'top-[15vh] px-[1.125rem] py-8 min-[575px]:justify-between min-[575px]:gap-y-10',
 			)}
 			style={{ scale, backgroundColor }}
 		>

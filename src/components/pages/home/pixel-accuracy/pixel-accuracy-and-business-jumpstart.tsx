@@ -89,7 +89,7 @@ export const PixelAccuracyAndBusinessJumpstart = () => {
 		<motion.section style={{ background: sectionBackground }}>
 			<div
 				ref={containerRef}
-				className='container h-[200vh] pt-[6.25rem] min-[992px]:pt-[12.5rem]'
+				className='container h-[200vh] pt-[6.25rem] min-[992px]:pt-[13rem]'
 			>
 				<div
 					className={cn(
