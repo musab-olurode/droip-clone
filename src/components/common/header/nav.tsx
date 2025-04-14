@@ -239,9 +239,9 @@ const NavLink = ({
 					'group flex shrink-0 cursor-pointer flex-col overflow-visible py-4 leading-4 font-medium text-[#605C7A] min-[992px]:p-2.5 min-[992px]:text-sm',
 					'border-b border-[#5641f333] text-lg transition-colors duration-300 hover:text-black min-[992px]:border-none',
 				)}
+				onClick={handleClick}
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
-				onClick={handleClick}
 				// To appease the type checker
 				{...((Comp === Link && { href }) as { href: string })}
 			>
