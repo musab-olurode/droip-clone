@@ -335,7 +335,7 @@ export const Nav = () => {
 				className={cn(
 					'absolute inset-0 -z-10 h-[3.875rem] bg-[#f5f5f7db] backdrop-blur-[0.9375rem] backdrop-opacity-100 transition-[height,backdrop-filter] duration-500',
 					'min-[992px]:h-[4.625rem]',
-					isExpanded && 'fixed h-screen bg-[#ffffffb8] backdrop-blur-[4.5rem]',
+					isExpanded && 'fixed h-[105vh] bg-[#ffffffb8] backdrop-blur-[4.5rem]',
 				)}
 			/>
 			<div className='container flex items-center justify-between gap-x-16 min-[992px]:justify-start'>

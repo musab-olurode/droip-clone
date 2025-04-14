@@ -115,7 +115,7 @@ export const Features = ({ variant = 1 }: { variant?: 1 | 2 }) => {
 								className='group cursor-pointer text-start'
 								onClick={() => setActiveIndex(index)}
 							>
-								<div className='flex cursor-pointer gap-x-[1.5625rem] group-last:-mb-[1.875rem]'>
+								<div className='flex cursor-pointer gap-x-[0.875rem] group-last:-mb-[1.875rem] min-[575px]:gap-x-[1.5625rem]'>
 									<div className='size-9 shrink-0 bg-[#f5f5f7]'>
 										<div className='relative isolate flex h-full w-full items-center justify-center'>
 											<div className='bg-primary size-1.5 rounded-full' />
@@ -131,8 +131,9 @@ export const Features = ({ variant = 1 }: { variant?: 1 | 2 }) => {
 									<div className='flex flex-col gap-y-6'>
 										<h3
 											className={cn(
-												'ease scale-100 text-[2rem] leading-[2.375rem] font-semibold -tracking-[0.08125rem] opacity-100 transition-[opacity,scale]',
-												'origin-[0%_50%] duration-500',
+												'scale-100 leading-[2.375rem] font-semibold -tracking-[0.08125rem] opacity-100 transition-[opacity,scale] min-[992px]:text-[2rem]',
+												'origin-[0%_50%] -tracking-[0.0625rem] duration-500 min-[575px]:text-[1.75rem] min-[575px]:leading-[2rem]',
+												'text-2xl leading-[1.75rem]',
 												index !== activeIndex && 'scale-75 opacity-50',
 											)}
 										>

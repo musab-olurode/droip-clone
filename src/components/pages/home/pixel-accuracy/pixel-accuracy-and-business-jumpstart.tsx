@@ -29,6 +29,7 @@ export const PixelAccuracyAndBusinessJumpstart = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const orTextRef = useRef<HTMLDivElement>(null);
 	const businessJumpstartRef = useRef<HTMLDivElement>(null);
+	const imagesSliderRef = useRef<HTMLDivElement>(null);
 	const { scrollYProgress: containerScrollYProgress } = useScroll({
 		target: containerRef,
 		offset: ['start start', '0.8 end'],
@@ -86,15 +87,15 @@ export const PixelAccuracyAndBusinessJumpstart = () => {
 	}, [width]);
 
 	return (
-		<motion.section style={{ background: sectionBackground }}>
-			<div
-				ref={containerRef}
-				className='container h-[200vh] pt-[6.25rem] min-[992px]:pt-[13rem]'
-			>
+		<motion.section
+			className='relative pt-[6.25rem] min-[992px]:pt-[13rem]'
+			style={{ background: sectionBackground }}
+		>
+			<div ref={containerRef} className='container h-[200vh]'>
 				<div
 					className={cn(
 						'inset-auto top-[6.25rem] order-1 flex flex-col justify-between gap-x-10 min-[992px]:sticky min-[992px]:max-h-[51.875rem]',
-						'max-h-none gap-y-9 overflow-visible min-[992px]:flex-row min-[992px]:overflow-hidden',
+						'max-h-none w-full gap-y-9 overflow-hidden min-[992px]:flex-row',
 					)}
 				>
 					<motion.div
@@ -116,9 +117,15 @@ export const PixelAccuracyAndBusinessJumpstart = () => {
 							</h2>
 						</TransitionText>
 					</motion.div>
-					<div className='order-3 min-[992px]:order-2'>
-						<div className='sticky top-0 flex w-full flex-col items-center justify-center gap-y-10 min-[992px]:relative min-[992px]:max-w-[14.6875rem]'>
+					<div className='order-3 max-[992px]:w-full max-[991px]:flex max-[991px]:h-[120vh] max-[991px]:justify-center min-[992px]:order-2'>
+						<div
+							className={cn(
+								'flex h-full w-full max-w-[14.6875rem] flex-col items-center gap-y-10 overflow-visible max-[991px]:sticky max-[991px]:top-[6.25rem] min-[992px]:relative',
+								'max-[991px]:inset-auto max-[767px]:overflow-hidden',
+							)}
+						>
 							<motion.div
+								ref={imagesSliderRef}
 								className='flex flex-col gap-y-10'
 								style={{
 									translateY: translateImagesY,
@@ -128,15 +135,18 @@ export const PixelAccuracyAndBusinessJumpstart = () => {
 								{IMAGES.map((image, index) => (
 									<PixelAccuracyImageCard
 										key={index}
+										containerScrollYProgress={containerScrollYProgress}
 										image={image}
 										index={index}
 									/>
 								))}
 							</motion.div>
-							<BoundingBox />
+							<BoundingBox
+								containerScrollYProgress={containerScrollYProgress}
+							/>
 							<motion.h3
 								ref={orTextRef}
-								className='absolute inset-auto bottom-[22.5rem] translate-y-[120px] text-[10.75rem] font-semibold -tracking-[0.5375rem]'
+								className='absolute inset-auto bottom-[17rem] text-[10.75rem] font-semibold -tracking-[0.5375rem]'
 								style={{
 									translateY: translateOrTextY,
 									opacity: orTextOpacity,

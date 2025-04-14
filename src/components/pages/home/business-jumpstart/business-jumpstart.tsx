@@ -22,7 +22,7 @@ export const BusinessJumpstart = ({
 	return (
 		<section
 			ref={ref}
-			className='relative -mt-[20.625rem] py-20 min-[992px]:py-32'
+			className='relative -mt-[20.625rem] overflow-hidden py-20 min-[992px]:py-32'
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 			onMouseMove={handleMouseMove}

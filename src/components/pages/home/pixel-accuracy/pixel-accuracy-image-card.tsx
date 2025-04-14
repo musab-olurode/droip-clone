@@ -1,38 +1,68 @@
 'use client';
 
-import { useRef } from 'react';
-
-import { motion, useScroll, useTransform } from 'motion/react';
-import Image from 'next/image';
+import { motion, MotionValue, useTransform } from 'motion/react';
 
 export const PixelAccuracyImageCard = ({
 	image,
+	index,
+	containerScrollYProgress,
 }: {
 	image: string;
 	index: number;
+	containerScrollYProgress: MotionValue<number>;
 }) => {
-	const imageRef = useRef<HTMLImageElement>(null);
-	const { scrollYProgress: fadeImagesScrollYProgress } = useScroll({
-		target: imageRef,
-		offset: ['start 400px', 'end 500px'],
-	});
+	// Calculate initial scale based on index
+	const getInitialScale = () => {
+		const scales = ['50%', '75%', '100%', '75%', '50%', '50%'];
 
-	const opacity = useTransform(fadeImagesScrollYProgress, [0, 1], [1, 0]);
-	const scale = useTransform(fadeImagesScrollYProgress, [0, 1], [1, 0.5]);
+		return scales[index % scales.length];
+	};
+
+	// Calculate initial opacity based on index
+	const getInitialOpacity = () => {
+		const opacities = [0.3, 0.5, 1, 0.5, 0.3, 0.3];
+
+		return opacities[index % opacities.length];
+	};
+
+	// Calculate input range based on index
+	const getInputRange = () => {
+		if (index < 3) {
+			// For first three items (0, 1, 2), only scale down
+			return [0, 0, 1];
+		}
+
+		// For remaining items, scale up then down
+		return [0, 0.4, 1];
+	};
+
+	const inputRange = getInputRange();
+
+	const opacity = useTransform(
+		containerScrollYProgress,
+		inputRange,
+		index < 3
+			? [getInitialOpacity(), getInitialOpacity(), 0.3]
+			: [getInitialOpacity(), 1, getInitialOpacity()],
+	);
+	const width = useTransform(
+		containerScrollYProgress,
+		inputRange,
+		index < 3
+			? [getInitialScale(), getInitialScale(), '50%']
+			: [getInitialScale(), '100%', getInitialScale()],
+	);
 
 	return (
-		<motion.div
-			ref={imageRef}
-			className='relative flex h-full w-full items-center justify-center'
-			style={{ opacity, scale }}
-		>
-			<Image
-				alt='Image'
-				className='w-full object-contain'
+		<div className='relative mx-auto flex h-full w-auto items-center justify-center'>
+			<motion.img
+				alt={`Pixel accuracy image ${index}`}
+				className='h-auto w-1/2 object-contain'
 				height={120}
 				src={image}
+				style={{ opacity, width }}
 				width={235}
 			/>
-		</motion.div>
+		</div>
 	);
 };

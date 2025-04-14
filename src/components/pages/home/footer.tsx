@@ -38,7 +38,7 @@ const LINKS = [
 
 export const Footer = () => {
 	return (
-		<footer className='container'>
+		<footer className='container max-[575px]:pb-4'>
 			<div
 				className={cn(
 					'grid grid-cols-2 gap-x-6 min-[767px]:[grid-template-columns:0.5fr_1fr_1fr_1fr_1fr] min-[767px]:gap-y-4 min-[992px]:my-0 min-[992px]:grid-cols-5 min-[992px]:py-0',
@@ -99,7 +99,7 @@ export const Footer = () => {
 					</div>
 				))}
 			</div>
-			<div className='mt-20 flex flex-wrap items-center justify-between gap-x-5 gap-y-10 border-t border-[#00000026] pt-[1.375rem] pb-6'>
+			<div className='mt-20 flex flex-wrap items-center justify-between gap-x-5 gap-y-10 border-t border-[#00000026] pt-[1.375rem] pb-6 max-[575px]:gap-y-6'>
 				<span className='order-last leading-[1.875rem] font-light text-[#00000099] min-[767px]:order-none'>
 					© 2025 Droip. All rights reserved
 				</span>
@@ -114,9 +114,7 @@ export const Footer = () => {
 					href='/'
 				>
 					<DroipDIcon />
-					<span className='rounded-[0.25rem] bg-white p-2'>
-						Made in my imagination
-					</span>
+					<span className='rounded-[0.25rem] bg-white p-2'>Made in Droip</span>
 				</Link>
 			</div>
 		</footer>
