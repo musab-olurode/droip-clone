@@ -67,7 +67,7 @@ export const BusinessScaleCard = ({ title, description, image }: Props) => {
 					</Link>
 				</div>
 			</div>
-			<div className='w-full max-w-[54.625rem] overflow-hidden rounded-tl-lg rounded-bl-lg min-[575px]:h-full'>
+			<div className='w-full max-w-[54.625rem] overflow-hidden rounded-tl-lg rounded-bl-lg max-[991px]:rounded-tl-[0.5625rem] max-[991px]:rounded-bl-[0.5625rem] min-[575px]:h-full'>
 				<Image
 					alt={title}
 					className='h-full w-full object-cover'
