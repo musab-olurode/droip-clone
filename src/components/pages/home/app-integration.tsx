@@ -34,8 +34,8 @@ const LOGOS = [
 
 export const AppIntegration = () => {
 	return (
-		<section className='container py-32'>
-			<h2 className='text-8xl leading-[1.1em] font-medium -tracking-[0.3125rem]'>
+		<section className='container py-16 min-[767px]:py-[4.5rem] min-[992px]:py-32'>
+			<h2 className='text-[2.875rem] leading-[1.1em] font-medium -tracking-[0.1875rem] min-[992px]:text-8xl min-[992px]:-tracking-[0.3125rem]'>
 				App <br />
 				integration
 			</h2>
@@ -90,23 +90,33 @@ export const AppIntegration = () => {
 						/>
 					</div>
 				</div>
-				<p className='max-w-[27.8125rem] min-w-[25rem] text-2xl leading-[1.8rem] -tracking-[0.03rem]'>
+				<p
+					className={cn(
+						'min-[575px]:max-w-[20rem] min-[575px]:leading-[1.8rem] min-[767px]:max-w-[22.5rem] min-[767px]:-tracking-[0.03rem] min-[992px]:min-w-[25rem]',
+						'max-w-[16.875rem] min-[575px]:text-[1.125rem] min-[575px]:leading-[1.5rem] min-[767px]:text-2xl min-[992px]:max-w-[27.8125rem]',
+						'min-w-auto text-lg leading-6 min-[575px]:-tracking-[0.01875rem]',
+					)}
+				>
 					Connect your go-to apps effortlessly within the builder for a smooth
 					and uninterrupted workflow.
 				</p>
 			</div>
-			<div className='group grid grid-cols-6 gap-px'>
+			<div className='group grid grid-cols-4 gap-px min-[767px]:grid-cols-6'>
 				{LOGOS.map((logo, index) => (
 					<div
 						key={index}
 						className={cn(
-							'flex h-full min-h-[6.875rem] w-full items-center justify-center overflow-hidden rounded-[0.75rem] bg-[#ebe8fe] hover:bg-[#c9c2fb]',
-							'ease group/logo transition-[background-color,scale,filter] duration-[400ms] group-hover:blur-[0.1875rem] hover:blur-none',
+							'flex h-full w-full items-center justify-center overflow-hidden rounded-[0.75rem] bg-[#ebe8fe] hover:bg-[#c9c2fb] min-[992px]:min-h-[6.875rem]',
+							'ease group/logo transition-[background-color,scale,filter] duration-[400ms] group-hover:blur-[0.1875rem] hover:blur-none min-[767px]:min-h-[6.25rem]',
+							'min-h-16 min-[575px]:min-h-20',
 						)}
 					>
 						<Image
 							alt='logo'
-							className='ease size-12 rounded-[0.75rem] object-contain transition-transform duration-[400ms] group-hover/logo:scale-[1.3]'
+							className={cn(
+								'ease rounded-[0.75rem] object-contain transition-transform duration-[400ms] group-hover/logo:scale-[1.3] min-[992px]:size-12',
+								'size-[1.875rem] min-[767px]:size-9',
+							)}
 							height={48}
 							src={logo}
 							width={48}

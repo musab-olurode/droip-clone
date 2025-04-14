@@ -1,12 +1,14 @@
 'use client';
 
+import { cn } from '@/lib/utils';
+
 import { motion } from 'motion/react';
 import Image from 'next/image';
 
 export const DesignAndBuild = () => {
 	return (
-		<section className='container py-32'>
-			<h2 className='text-8xl leading-[1.1em] font-medium -tracking-[0.3125rem]'>
+		<section className='container py-16 min-[767px]:py-[4.5rem] min-[992px]:py-32'>
+			<h2 className='text-[2.875rem] leading-[1.1em] font-medium -tracking-[0.1875rem] min-[992px]:text-8xl min-[992px]:-tracking-[0.3125rem]'>
 				Design and <br />
 				build everything
 			</h2>
@@ -61,15 +63,31 @@ export const DesignAndBuild = () => {
 						/>
 					</div>
 				</div>
-				<p className='max-w-[27.8125rem] min-w-[25rem] text-2xl leading-[1.8rem] -tracking-[0.03rem]'>
+				<p
+					className={cn(
+						'min-[575px]:max-w-[20rem] min-[575px]:leading-[1.8rem] min-[767px]:max-w-[22.5rem] min-[767px]:-tracking-[0.03rem] min-[992px]:min-w-[25rem]',
+						'max-w-[16.875rem] min-[575px]:text-[1.125rem] min-[575px]:leading-[1.5rem] min-[767px]:text-2xl min-[992px]:max-w-[27.8125rem]',
+						'min-w-auto text-lg leading-6 min-[575px]:-tracking-[0.01875rem]',
+					)}
+				>
 					more efficiently with the{' '}
 					<span className='font-semibold'>most advanced</span> granular controls
 				</p>
 			</div>
-			<div className='group relative isolate grid grid-cols-4 gap-px'>
-				<article className='col-span-4 grid w-full grid-cols-2 items-end justify-end gap-y-[2.6875rem] rounded-lg bg-white p-8'>
+			<div className='group relative isolate grid grid-cols-1 gap-px min-[767px]:grid-cols-2 min-[992px]:grid-cols-4'>
+				<article
+					className={cn(
+						'col-span-1 grid w-full grid-cols-1 items-end justify-end gap-y-[2.6875rem] rounded-lg bg-white min-[767px]:col-span-2 min-[767px]:grid-cols-2',
+						'p-6 min-[992px]:col-span-4 min-[992px]:p-8',
+					)}
+				>
 					<div className='flex max-w-[22.5rem] flex-col gap-y-6'>
-						<h3 className='text-[2rem] leading-[2.375rem] font-semibold -tracking-[0.08125rem]'>
+						<h3
+							className={cn(
+								'font-semibold min-[767px]:text-2xl min-[992px]:text-[2rem] min-[992px]:leading-[2.375rem] min-[992px]:-tracking-[0.08125rem]',
+								'text-2xl leading-[1.875rem] -tracking-[0.0625rem] min-[767px]:leading-7 min-[767px]:-tracking-[0.03rem]',
+							)}
+						>
 							Seamless <br />
 							migration
 						</h3>
@@ -86,16 +104,21 @@ export const DesignAndBuild = () => {
 						width={620}
 					/>
 				</article>
-				<article className='col-span-2 flex w-full flex-col gap-y-6 rounded-lg bg-white p-8'>
+				<article className='col-span-1 flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:col-span-2 min-[992px]:p-8'>
 					<Image
 						alt='Form builder'
-						className='h-full max-h-[11.375rem] object-contain'
+						className='h-full max-h-[11.375rem] w-full object-contain'
 						height={182}
 						src='https://droip.com/wp-content/uploads/2025/03/design-1.webp'
 						width={596}
 					/>
 					<div className='flex max-w-[22.5rem] flex-col gap-y-6'>
-						<h3 className='text-[2rem] leading-[2.375rem] font-semibold -tracking-[0.08125rem]'>
+						<h3
+							className={cn(
+								'font-semibold min-[767px]:text-2xl min-[992px]:text-[2rem] min-[992px]:leading-[2.375rem] min-[992px]:-tracking-[0.08125rem]',
+								'text-2xl leading-[1.875rem] -tracking-[0.0625rem] min-[767px]:leading-7 min-[767px]:-tracking-[0.03rem]',
+							)}
+						>
 							Form builder
 						</h3>
 						<p>
@@ -104,25 +127,30 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='col-span-2 flex w-full flex-col gap-y-6 rounded-lg bg-white p-8'>
+				<article className='col-span-1 flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:col-span-2 min-[992px]:p-8'>
 					<Image
 						alt='CSS preview'
-						className='h-full max-h-[11.375rem] object-contain'
+						className='h-full max-h-[11.375rem] w-full object-contain'
 						height={182}
 						src='https://droip.com/wp-content/uploads/2025/03/design8.webp'
 						width={596}
 					/>
 					<div className='flex max-w-[22.5rem] flex-col gap-y-6'>
-						<h3 className='text-[2rem] leading-[2.375rem] font-semibold -tracking-[0.08125rem]'>
+						<h3
+							className={cn(
+								'font-semibold min-[767px]:text-2xl min-[992px]:text-[2rem] min-[992px]:leading-[2.375rem] min-[992px]:-tracking-[0.08125rem]',
+								'text-2xl leading-[1.875rem] -tracking-[0.0625rem] min-[767px]:leading-7 min-[767px]:-tracking-[0.03rem]',
+							)}
+						>
 							CSS preview
 						</h3>
 						<p>See real-time CSS changes and fine-tune styles as you need.</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
 					<Image
 						alt='Unlimited breakpoints'
-						className='h-full max-h-[11.375rem] object-contain'
+						className='h-full max-h-[11.375rem] w-full object-contain'
 						height={169}
 						src='https://droip.com/wp-content/uploads/2025/03/design1-1.webp'
 						width={256}
@@ -137,10 +165,10 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
 					<Image
 						alt='Figma to droip'
-						className='h-full max-h-[11.375rem] object-contain'
+						className='h-full max-h-[11.375rem] w-full object-contain'
 						height={169}
 						src='https://droip.com/wp-content/uploads/2025/03/design2.webp'
 						width={256}
@@ -155,10 +183,10 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
 					<Image
 						alt='Code element'
-						className='h-full max-h-[11.375rem] object-contain'
+						className='h-full max-h-[11.375rem] w-full object-contain'
 						height={169}
 						src='https://droip.com/wp-content/uploads/2025/03/design4.webp'
 						width={256}
@@ -173,10 +201,10 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
 					<Image
 						alt='Pop-up builder'
-						className='h-full max-h-[11.375rem] object-contain'
+						className='h-full max-h-[11.375rem] w-full object-contain'
 						height={169}
 						src='https://droip.com/wp-content/uploads/2025/03/design5.webp'
 						width={256}
@@ -191,10 +219,10 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
 					<Image
 						alt='Autosave'
-						className='h-full max-h-[11.375rem] object-contain'
+						className='h-full max-h-[11.375rem] w-full object-contain'
 						height={169}
 						src='https://droip.com/wp-content/uploads/2025/03/design7.webp'
 						width={256}
@@ -208,10 +236,10 @@ export const DesignAndBuild = () => {
 						</p>
 					</div>
 				</article>
-				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:p-8'>
 					<Image
 						alt='Global style manager'
-						className='h-full max-h-[11.375rem] object-contain'
+						className='h-full max-h-[11.375rem] w-full object-contain'
 						height={169}
 						src='https://droip.com/wp-content/uploads/2025/03/design6.webp'
 						width={256}
@@ -223,7 +251,7 @@ export const DesignAndBuild = () => {
 						<p>Maintain consistent branding with centralized style controls.</p>
 					</div>
 				</article>
-				<article className='col-span-2 flex w-full flex-col gap-y-6 rounded-lg bg-white p-8'>
+				<article className='flex w-full flex-col gap-y-6 rounded-lg bg-white p-6 min-[992px]:col-span-2 min-[992px]:p-8'>
 					<Image
 						alt='Droip AI'
 						className='h-full max-h-[11.375rem] object-contain'

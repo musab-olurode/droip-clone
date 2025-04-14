@@ -3,6 +3,8 @@
 import { useRef } from 'react';
 import { useState } from 'react';
 
+import { cn } from '@/lib/utils';
+
 import { GradientCursor } from '@/components/common/gradient-cursor';
 import { TransitionText } from '@/components/common/transition-text';
 
@@ -28,19 +30,30 @@ export const Performance = () => {
 			className='relative isolate mb-[3.75rem] flex overflow-hidden bg-black'
 			onMouseMove={handleMouseMove}
 		>
-			<div className='container py-32'>
-				<div className='mx-auto mb-32 w-fit'>
+			<div className='container py-16 min-[767px]:py-[4.5rem] min-[992px]:py-32'>
+				<div className='mx-auto mb-16 w-fit min-[575px]:mb-12 min-[992px]:mb-32'>
 					<TransitionText bg='black' lines={2}>
-						<h2 className='text-center text-[4rem] leading-[1.1em] font-semibold -tracking-[0.2rem] text-white'>
+						<h2
+							className={cn(
+								'pointer-events-auto text-center font-semibold min-[575px]:leading-[1.1em] min-[575px]:-tracking-[0.125rem] min-[767px]:text-[2.875rem]',
+								'text-[2rem] -tracking-[0.0625rem] text-white min-[575px]:text-[2.75rem] min-[992px]:text-[4rem] min-[992px]:-tracking-[0.2rem]',
+								'leading-[1.2em]',
+							)}
+						>
 							Performance that <br />
 							sets you apart
 						</h2>
 					</TransitionText>
 				</div>
-				<div className='grid grid-cols-2 items-stretch justify-end gap-x-[1.125rem] gap-y-1'>
+				<div className='grid grid-cols-1 items-stretch justify-end gap-x-[1.125rem] gap-y-4 min-[992px]:grid-cols-2'>
 					<article className='flex flex-col justify-between overflow-hidden rounded-lg bg-[#ffffff1a]'>
-						<div className='flex flex-col gap-y-6 p-12 text-white'>
-							<h3 className='text-[2rem] leading-[2.375rem] font-semibold -tracking-[0.125rem]'>
+						<div className='flex flex-col gap-y-[1.125rem] p-6 text-white min-[767px]:gap-y-6 min-[767px]:p-8 min-[992px]:p-12'>
+							<h3
+								className={cn(
+									'font-semibold min-[767px]:text-[1.75rem] min-[767px]:leading-[2.375rem] min-[767px]:-tracking-[0.0875rem] min-[992px]:text-[2rem]',
+									'text-2xl leading-[1.875rem] -tracking-[0.025rem] min-[992px]:-tracking-[0.125rem]',
+								)}
+							>
 								Clean code output
 							</h3>
 							<p className='max-w-[27.125rem] font-medium tracking-normal opacity-[0.72]'>
@@ -58,8 +71,13 @@ export const Performance = () => {
 						/>
 					</article>
 					<article className='flex flex-col justify-between overflow-hidden rounded-lg bg-[#ffffff1a]'>
-						<div className='flex flex-col gap-y-6 p-12 text-white'>
-							<h3 className='text-[2rem] leading-[2.375rem] font-semibold -tracking-[0.125rem]'>
+						<div className='flex flex-col gap-y-[1.125rem] p-6 text-white min-[767px]:gap-y-6 min-[767px]:p-8 min-[992px]:p-12'>
+							<h3
+								className={cn(
+									'font-semibold min-[767px]:text-[1.75rem] min-[767px]:leading-[2.375rem] min-[767px]:-tracking-[0.0875rem] min-[992px]:text-[2rem]',
+									'text-2xl leading-[1.875rem] -tracking-[0.025rem] min-[992px]:-tracking-[0.125rem]',
+								)}
+							>
 								Keep website lightweight
 							</h3>
 							<p className='max-w-[27.125rem] font-medium tracking-normal opacity-[0.72]'>

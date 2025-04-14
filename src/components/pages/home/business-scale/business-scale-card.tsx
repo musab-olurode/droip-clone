@@ -2,6 +2,8 @@
 
 import { useRef } from 'react';
 
+import { cn } from '@/lib/utils';
+
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
@@ -32,15 +34,26 @@ export const BusinessScaleCard = ({ title, description, image }: Props) => {
 	return (
 		<motion.article
 			ref={cardRef}
-			className='sticky inset-auto top-[10vh] mb-20 flex h-[80vh] max-h-[46.25rem] justify-between gap-x-10 rounded-[1.75rem] p-12 pr-0'
+			className={cn(
+				'sticky inset-auto flex flex-col justify-between gap-x-10 p-12 pr-0 min-[992px]:top-[10vh] min-[992px]:mb-20 min-[992px]:h-[80vh]',
+				'min-[767px]:flex-row min-[992px]:max-h-[46.25rem] min-[992px]:rounded-[1.75rem]',
+				'h-[70vh] max-h-[50rem] rounded-[0.875rem] min-[575px]:top-[15vh] min-[575px]:mb-0',
+				'min-[575px]:justify-between min-[575px]:gap-y-10 min-[575px]:pb-8',
+				'top-[15vh] px-[1.125rem] py-8',
+			)}
 			style={{ scale, backgroundColor }}
 		>
-			<div className='flex max-w-[20rem] flex-col justify-between pb-16'>
+			<div className='flex max-w-[25rem] flex-col justify-between gap-y-8 pb-16 min-[992px]:max-w-[20rem]! md:max-w-[12.8125rem] md:gap-y-6'>
 				<h3 className='text-[2rem] leading-[2.375rem] font-semibold -tracking-[0.08125rem]'>
 					{title}
 				</h3>
 				<div className='flex flex-col gap-y-6'>
-					<p className='text-2xl leading-[1.8rem] font-normal -tracking-[0.03rem]'>
+					<p
+						className={cn(
+							'text-2xl leading-[1.8rem] font-normal -tracking-[0.03rem] max-[991]:leading-5 max-[991px]:text-base max-[991px]:-tracking-[0.0125rem]',
+							'max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:tracking-normal max-[767px]:text-[#605c7a]',
+						)}
+					>
 						{description}
 					</p>
 					<Link
@@ -55,7 +68,7 @@ export const BusinessScaleCard = ({ title, description, image }: Props) => {
 					</Link>
 				</div>
 			</div>
-			<div className='h-full w-full max-w-[54.625rem] overflow-hidden rounded-tl-lg rounded-bl-lg'>
+			<div className='w-full max-w-[54.625rem] overflow-hidden rounded-tl-lg rounded-bl-lg min-[575px]:h-full'>
 				<Image
 					alt={title}
 					className='h-full w-full object-cover'

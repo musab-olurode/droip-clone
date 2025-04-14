@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
+import useTailwindBreakpoints from '@/hooks/use-tailwind-breakpoints';
+
 import { TransitionText } from '@/components/common/transition-text';
 
 import { ArrowRight } from 'lucide-react';
@@ -79,13 +81,15 @@ const title = {
 
 export const Features = ({ variant = 1 }: { variant?: 1 | 2 }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
+	const { width } = useTailwindBreakpoints();
 
 	return (
-		<section className='container py-32'>
-			<TransitionText lines={2}>
+		<section className='container py-[4.5rem] min-[992px]:py-32'>
+			<TransitionText lines={width > 575 ? 2 : 3}>
 				<h2
 					className={cn(
-						'text-8xl leading-[6.6rem] font-medium -tracking-[0.3125rem]',
+						'pointer-events-auto text-[2.875rem] leading-[1.1em] font-medium max-[575px]:[font-size:clamp(2.875rem,11vw,3.75rem)] min-[992px]:text-8xl min-[992px]:tracking-[0.3125rem]',
+						'-tracking-[0.1875rem]',
 						variant === 2 && 'max-w-[62.5rem]',
 					)}
 				>
@@ -95,13 +99,13 @@ export const Features = ({ variant = 1 }: { variant?: 1 | 2 }) => {
 			<div
 				className={cn(
 					'flex justify-between gap-x-[3.125rem] gap-y-4 pt-[7.8125rem]',
-					variant === 2 && 'flex-row-reverse',
+					variant === 2 && 'min-[992px]:flex-row-reverse',
 				)}
 			>
 				<div
 					className={cn(
-						'relative isolate h-fit w-full max-w-[25.5rem]',
-						variant === 2 && 'max-w-[28.5rem]',
+						'relative isolate h-fit w-full min-[992px]:max-w-[25.5rem]',
+						variant === 2 && 'min-[992px]:max-w-[28.5rem]',
 					)}
 				>
 					<div className='flex flex-col gap-y-10'>
@@ -162,6 +166,13 @@ export const Features = ({ variant = 1 }: { variant?: 1 | 2 }) => {
 															<ArrowRight className='text-primary size-6 transition-transform duration-300 group-hover/link:translate-x-[0.3125rem]' />
 														</Link>
 													)}
+													<Image
+														alt={content.title}
+														className='static w-full overflow-hidden rounded-lg object-contain min-[992px]:hidden'
+														height={500}
+														src={content.image}
+														width={874}
+													/>
 												</div>
 											</div>
 										</div>
@@ -172,7 +183,7 @@ export const Features = ({ variant = 1 }: { variant?: 1 | 2 }) => {
 					</div>
 					<div className='absolute inset-0 left-[1.0375rem] -z-10 w-0.5 bg-[#ddd9fd]' />
 				</div>
-				<div className='flex-start relative flex h-[33.625rem] w-[55%]'>
+				<div className='flex-start relative hidden h-[33.625rem] w-[55%] min-[992px]:flex'>
 					{[...(variant === 1 ? CONTENT : CONTENT2)].map((content, index) => (
 						<div
 							key={`content-image-${index}`}

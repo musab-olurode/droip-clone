@@ -33,10 +33,10 @@ const IMAGES = {
 
 export const BusinessJumpstartImageSlider = () => {
 	return (
-		<div className='absolute inset-auto top-[5.9375rem] right-0 flex w-[65%] flex-col gap-y-0.5 overflow-hidden'>
+		<div className='relative inset-auto right-0 flex w-full flex-col gap-y-0.5 overflow-hidden min-[992px]:absolute min-[992px]:top-[5.9375rem] min-[992px]:w-[65%]'>
 			<div className='absolute inset-0 left-auto z-[1] w-[15%] [background-image:linear-gradient(90deg,#00000000_0%,rgba(0,0,0,1)_95%)]' />
 			<div className='absolute inset-0 right-auto z-[1] w-[15%] rotate-180 [background-image:linear-gradient(90deg,#00000000_0%,rgba(0,0,0,1)_95%)]' />
-			<div className='min-w-aut0 flex w-full'>
+			<div className='flex w-full min-w-auto'>
 				<motion.div
 					animate={{
 						x: ['0%', '-50%'],

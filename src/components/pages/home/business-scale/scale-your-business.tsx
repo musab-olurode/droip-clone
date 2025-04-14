@@ -1,15 +1,22 @@
 'use client';
 
+import { cn } from '@/lib/utils';
+
 import { TransitionText } from '@/components/common/transition-text';
 import { BusinessScaleCard } from '@/components/pages/home/business-scale/business-scale-card';
 
 export const ScaleYourBusiness = () => {
 	return (
 		<section className='bg-black'>
-			<div className='container py-32'>
+			<div className='container py-16 md:py-32'>
 				<div className='max-w-[37.5rem] pb-24'>
 					<TransitionText bg='black' lines={2}>
-						<h2 className='text-8xl leading-[6.6rem] font-medium -tracking-[0.3125rem] text-white'>
+						<h2
+							className={cn(
+								'pointer-events-auto text-8xl text-[2.875rem] leading-[1.1em] font-medium text-white min-[992px]:-tracking-[0.3125rem]',
+								'-tracking-[0.1875rem]',
+							)}
+						>
 							Scale your business with
 						</h2>
 					</TransitionText>

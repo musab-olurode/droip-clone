@@ -93,6 +93,19 @@
 		margin-inline: auto;
 		max-width: 1360px;
 	}
+	@media (width <= 991px) {
+		margin-inline: auto;
+		max-width: 820px;
+	}
+	@media (width <= --theme(--breakpoint-md)) {
+		margin-inline: auto;
+		max-width: 640px;
+	}
+	@media (width <= 571px) {
+		margin-inline: auto;
+		max-width: 480px;
+		padding-inline: 1rem;
+	}
 }
 
 @layer base {
