@@ -14,8 +14,9 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-	title: 'Nextjs and Nestjs scaffold',
-	description: 'Nextjs and Nestjs fullstack scaffold',
+	title: 'The No-Code Website Builder for WordPress',
+	description:
+		'Discover the power of Droip. Create WordPress sites of any size with unparalleled code-level precision, all within a user-friendly, no-code environment.',
 };
 
 export default function RootLayout({
