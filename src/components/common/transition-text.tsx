@@ -2,7 +2,7 @@
 
 import { PropsWithChildren, useEffect, useState } from 'react';
 
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 interface Props extends PropsWithChildren {
 	lines: number;
@@ -11,6 +11,7 @@ interface Props extends PropsWithChildren {
 
 export const TransitionText = ({ children, lines, bg = '#f5f5f7' }: Props) => {
 	const [prevLines, setPrevLines] = useState(lines);
+	const [hasAnimated, setHasAnimated] = useState(false);
 
 	useEffect(() => {
 		setPrevLines(lines);
@@ -22,13 +23,14 @@ export const TransitionText = ({ children, lines, bg = '#f5f5f7' }: Props) => {
 			initial='hidden'
 			viewport={{ once: true }}
 			whileInView='visible'
+			onViewportEnter={() => setHasAnimated(true)}
 		>
 			{children}
 			<div className='absolute inset-0 flex flex-col'>
 				{Array.from({ length: Math.max(prevLines, lines) }).map((_, index) => (
 					<motion.div
 						key={index}
-						animate={index < lines ? 'visible' : 'hidden'}
+						animate={hasAnimated && index < lines ? 'visible' : 'hidden'}
 						className='h-full w-full opacity-[0.68]'
 						style={{ backgroundColor: bg }}
 						transition={{ duration: 1, delay: index * 0.1 }}

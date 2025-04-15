@@ -1,19 +1,30 @@
 'use client';
 
+import { useMemo } from 'react';
+
 import { cn } from '@/lib/utils';
+
+import useTailwindBreakpoints from '@/hooks/use-tailwind-breakpoints';
 
 import { TransitionText } from '@/components/common/transition-text';
 import { BusinessScaleCard } from '@/components/pages/home/business-scale/business-scale-card';
 
 export const ScaleYourBusiness = () => {
+	const { width } = useTailwindBreakpoints();
+	const titleTextLines = useMemo(() => {
+		if (width < 992) return 1;
+
+		return 2;
+	}, [width]);
+
 	return (
 		<section className='bg-black'>
 			<div className='container py-16 md:py-32'>
 				<div className='max-w-[37.5rem] pb-24'>
-					<TransitionText bg='black' lines={2}>
+					<TransitionText bg='black' lines={titleTextLines}>
 						<h2
 							className={cn(
-								'pointer-events-auto text-8xl text-[2.875rem] leading-[1.1em] font-medium text-white min-[992px]:-tracking-[0.3125rem]',
+								'pointer-events-auto text-[2.875rem] leading-[1.1em] font-medium text-white min-[992px]:text-8xl min-[992px]:-tracking-[0.3125rem]',
 								'-tracking-[0.1875rem]',
 							)}
 						>
